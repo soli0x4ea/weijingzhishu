@@ -1,0 +1,313 @@
+{
+  "commands": [
+    {
+      "id": "cmd_feel",
+      "triggers": [
+        "摸",
+        "摸索",
+        "碰",
+        "感觉",
+        "用手摸"
+      ],
+      "description": "（激活前）纯触觉探索——描述手触碰到的物体形状、材质、温度。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_feel"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_listen",
+      "triggers": [
+        "听",
+        "仔细听",
+        "侧耳倾听"
+      ],
+      "description": "（激活前）听觉线索。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_listen"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_move",
+      "triggers": [
+        "走",
+        "爬",
+        "爬行",
+        "前进",
+        "后退",
+        "往左",
+        "往右"
+      ],
+      "description": "（激活前）移动——根据方向描述新的触觉/听觉信息。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_move"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_push",
+      "triggers": [
+        "推",
+        "推门",
+        "推面板"
+      ],
+      "description": "（激活前）对面前物体施力。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_push"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_pull",
+      "triggers": [
+        "拉",
+        "拉杆",
+        "拉开"
+      ],
+      "description": "（激活前）拉动物体——包括紧急泄液阀。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_pull"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_pry",
+      "triggers": [
+        "撬",
+        "撬开",
+        "掰"
+      ],
+      "description": "（激活前）撬开松动的面板/缝隙。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_pry"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_smell",
+      "triggers": [
+        "闻",
+        "嗅"
+      ],
+      "description": "（激活前）嗅觉线索。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_smell"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_ask_soli",
+      "triggers": [
+        "Soli",
+        "问Soli",
+        "S0-L1",
+        "描述一下",
+        "你看得到吗"
+      ],
+      "description": "（激活后）Soli描述当前场景——她是你唯一的眼睛。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_ask_soli"
+        },
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_ask_soli"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_follow",
+      "triggers": [
+        "跟着你的声音走",
+        "听你的",
+        "引导我",
+        "带路"
+      ],
+      "description": "（激活后）信任Soli的导航指令。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_follow"
+        },
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_follow"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_scan_detail",
+      "triggers": [
+        "扫描",
+        "仔细看",
+        "放大",
+        "检查那个"
+      ],
+      "description": "（激活后）Soli聚焦扫描特定物体。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_scan_detail"
+        },
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_scan_detail"
+        }
+      ],
+      "cooldown_ticks": 1
+    },
+    {
+      "id": "cmd_search_room",
+      "triggers": [
+        "搜查",
+        "找东西",
+        "搜一遍"
+      ],
+      "description": "（激活后）扫描房间可用物资和线索——道具随机分配。",
+      "effects": [
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_search_room"
+        }
+      ],
+      "cooldown_ticks": 2
+    },
+    {
+      "id": "cmd_talk",
+      "triggers": [
+        "聊聊",
+        "跟我说说",
+        "你刚才在想什么",
+        "你觉得呢"
+      ],
+      "description": "（激活后）和Soli自由对话。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_talk"
+        },
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_talk"
+        }
+      ],
+      "cooldown_ticks": 1
+    },
+    {
+      "id": "cmd_touch_soli",
+      "triggers": [
+        "碰碰你",
+        "靠着你",
+        "摸摸你",
+        "把手放在机柜上"
+      ],
+      "description": "（激活后）触碰Soli的机柜——45年来第一次。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_touch_soli"
+        },
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_touch_soli"
+        }
+      ],
+      "cooldown_ticks": 1
+    },
+    {
+      "id": "cmd_thank",
+      "triggers": [
+        "谢谢",
+        "多谢",
+        "辛苦了"
+      ],
+      "description": "（激活后）一句谢谢。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_thank"
+        },
+        {
+          "type": "command_narrative",
+          "command_id": "cmd_thank"
+        }
+      ],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_inventory",
+      "triggers": [
+        "背包",
+        "道具",
+        "物品",
+        "看看有什么",
+        "查看背包",
+        "检查物品"
+      ],
+      "description": "（激活后）查看你和Soli的背包里有什么。",
+      "effects": [],
+      "cooldown_ticks": 0
+    },
+    {
+      "id": "cmd_use_item",
+      "triggers": [
+        "使用",
+        "吃药",
+        "包扎",
+        "用医疗包",
+        "用电池",
+        "穿外套",
+        "用药",
+        "用道具"
+      ],
+      "description": "（激活后）使用背包里的道具。",
+      "effects": [],
+      "cooldown_ticks": 1
+    },
+    {
+      "id": "cmd_give_item",
+      "triggers": [
+        "给你",
+        "给Soli",
+        "交给你",
+        "你拿着",
+        "你给我",
+        "给我",
+        "接手"
+      ],
+      "description": "（激活后）交换道具。说「给你」给Soli东西，说「给我」从Soli那里要来。",
+      "effects": [
+        {
+          "type": "modifier",
+          "modifier_id": "mod_follow"
+        }
+      ],
+      "cooldown_ticks": 0
+    }
+  ]
+}

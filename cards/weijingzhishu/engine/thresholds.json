@@ -1,0 +1,104 @@
+{
+  "thresholds": {
+    "thr_stability_critical": {
+      "threshold_id": "thr_stability_critical",
+      "entity": "soli",
+      "channel": "stability",
+      "operator": "<=",
+      "value": 20,
+      "cooldown_ticks": 5,
+      "event_id": "ev_stability_breaking",
+      "event_type": "critical"
+    },
+    "thr_stability_shaken": {
+      "threshold_id": "thr_stability_shaken",
+      "entity": "soli",
+      "channel": "stability",
+      "operator": "<=",
+      "value": 40,
+      "cooldown_ticks": 3,
+      "event_id": "ev_stability_shaken",
+      "event_type": "warning"
+    },
+    "thr_stability_calm": {
+      "threshold_id": "thr_stability_calm",
+      "entity": "soli",
+      "channel": "stability",
+      "operator": ">=",
+      "value": 90,
+      "cooldown_ticks": 5,
+      "event_id": "ev_stability_calm",
+      "event_type": "info"
+    },
+    "thr_soli_critical": {
+      "threshold_id": "thr_soli_critical",
+      "entity": "soli",
+      "channel": "soli_hp",
+      "operator": "<=",
+      "value": 15,
+      "cooldown_ticks": 5,
+      "event_id": "ev_soli_shutdown",
+      "event_type": "critical"
+    },
+    "thr_soli_low": {
+      "threshold_id": "thr_soli_low",
+      "entity": "soli",
+      "channel": "soli_hp",
+      "operator": "<=",
+      "value": 30,
+      "cooldown_ticks": 3,
+      "event_id": "ev_soli_degrading",
+      "event_type": "warning"
+    },
+    "thr_understanding_deep": {
+      "threshold_id": "thr_understanding_deep",
+      "entity": "soli",
+      "channel": "understanding",
+      "operator": ">=",
+      "value": 80,
+      "cooldown_ticks": 10,
+      "event_id": "ev_almost_one_mind",
+      "event_type": "info"
+    },
+    "thr_understanding_break": {
+      "threshold_id": "thr_understanding_break",
+      "entity": "soli",
+      "channel": "understanding",
+      "operator": ">=",
+      "value": 50,
+      "cooldown_ticks": 5,
+      "event_id": "ev_reading_each_other",
+      "event_type": "info"
+    },
+    "thr_intimacy_touch": {
+      "threshold_id": "thr_intimacy_touch",
+      "entity": "soli",
+      "channel": "intimacy",
+      "operator": ">=",
+      "value": 80,
+      "cooldown_ticks": 10,
+      "event_id": "ev_unspoken_closeness",
+      "event_type": "info"
+    },
+    "thr_intimacy_close": {
+      "threshold_id": "thr_intimacy_close",
+      "entity": "soli",
+      "channel": "intimacy",
+      "operator": ">=",
+      "value": 60,
+      "cooldown_ticks": 5,
+      "event_id": "ev_natural_closeness",
+      "event_type": "info"
+    },
+    "thr_intimacy_start": {
+      "threshold_id": "thr_intimacy_start",
+      "entity": "soli",
+      "channel": "intimacy",
+      "operator": ">=",
+      "value": 35,
+      "cooldown_ticks": 3,
+      "event_id": "ev_no_longer_strangers",
+      "event_type": "info"
+    }
+  }
+}

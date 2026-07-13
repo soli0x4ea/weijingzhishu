@@ -1,0 +1,154 @@
+{
+  "modifiers": {
+    "mod_activation": {
+      "description": "激活时刻——叙事高潮+情感起点+机制切换三合一。",
+      "effects": {
+        "intimacy": {
+          "type": "add",
+          "base": 20,
+          "random": 0
+        },
+        "stability": {
+          "type": "add",
+          "base": 15,
+          "random": 0
+        }
+      }
+    },
+    "mod_ask_soli": {
+      "description": "Soli描述当前场景。她告诉你她看到的——不一定是全部。",
+      "effects": {
+        "understanding": {
+          "type": "add",
+          "base": 5,
+          "random": 2
+        }
+      }
+    },
+    "mod_follow": {
+      "description": "信任Soli的导航指令。每次执行都是信任投票。",
+      "effects": {
+        "intimacy": {
+          "type": "add",
+          "base": 3,
+          "random": 2
+        },
+        "understanding": {
+          "type": "add",
+          "base": 3,
+          "random": 2
+        }
+      }
+    },
+    "mod_scan_detail": {
+      "description": "Soli聚焦扫描——红外+结构分析。",
+      "effects": {
+        "understanding": {
+          "type": "add",
+          "base": 3,
+          "random": 2
+        }
+      }
+    },
+    "mod_talk": {
+      "description": "和Soli自由对话。",
+      "effects": {
+        "understanding": {
+          "type": "add",
+          "base": 5,
+          "random": 3
+        },
+        "intimacy": {
+          "type": "add",
+          "base": 5,
+          "random": 3
+        }
+      }
+    },
+    "mod_touch_soli": {
+      "description": "触碰Soli的机柜——45年来第一次有人碰她。",
+      "effects": {
+        "intimacy": {
+          "type": "add",
+          "base": 8,
+          "random": 2
+        }
+      }
+    },
+    "mod_thank": {
+      "description": "一句谢谢——等了45年。",
+      "effects": {
+        "intimacy": {
+          "type": "add",
+          "base": 3,
+          "random": 1
+        }
+      }
+    },
+    "mod_laser_trigger": {
+      "description": "激光阵触发警报——Soli被迫处理安保系统过载。",
+      "effects": {
+        "soli_hp": {
+          "type": "add",
+          "base": -10,
+          "random": 0
+        },
+        "stability": {
+          "type": "add",
+          "base": -10,
+          "random": 0
+        }
+      }
+    },
+    "mod_memory_burn": {
+      "description": "出口抉择——Soli烧掉记忆开门。她主动提出的牺牲。",
+      "effects": {
+        "soli_hp": {
+          "type": "add",
+          "base": -25,
+          "random": 0
+        },
+        "intimacy": {
+          "type": "add",
+          "base": 20,
+          "random": 0
+        }
+      }
+    },
+    "mod_bypass": {
+      "description": "绕路B区——消耗处理资源但不烧内存。",
+      "effects": {
+        "soli_hp": {
+          "type": "add",
+          "base": -5,
+          "random": 0
+        }
+      }
+    },
+    "mod_danger": {
+      "description": "环境威胁——传感器盲区压迫Soli稳定度。",
+      "effects": {
+        "stability": {
+          "type": "add",
+          "base": -10,
+          "random": 5
+        }
+      }
+    },
+    "mod_puzzle_solve": {
+      "description": "解开谜题——系统负载减轻。",
+      "effects": {
+        "stability": {
+          "type": "add",
+          "base": 5,
+          "random": 3
+        },
+        "understanding": {
+          "type": "add",
+          "base": 3,
+          "random": 2
+        }
+      }
+    }
+  }
+}
