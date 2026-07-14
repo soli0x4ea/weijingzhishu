@@ -1,4 +1,5 @@
 __pycache__/
-MEMORY/
+/MEMORY/
+cards/weijingzhishu/MEMORY/
 *.pyc
 .DS_Store
