@@ -32,7 +32,8 @@
       "commands": "interaction/commands.json"
     },
     "memory": {
-      "enabled": true
+      "enabled": true,
+      "_note": "memory模块由dlc/memory/子模块自行管理路径，无需额外配置文件"
     },
     "behavior": {
       "enabled": true,
