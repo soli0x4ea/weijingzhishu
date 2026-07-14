@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/engine.schema.json",
+  "title": "Engine Module",
+  "description": "Core DLC engine module. Requires body to be enabled.",
+  "type": "object",
+  "required": [
+    "enabled"
+  ],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Enable engine module (L1+)."
+    },
+    "entities": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^engine/entities\\.json$",
+      "description": "Path to entities config."
+    },
+    "modifiers": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^engine/modifiers\\.json$",
+      "description": "Path to modifiers config."
+    },
+    "thresholds": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^engine/thresholds\\.json$",
+      "description": "Path to thresholds config."
+    },
+    "narratives": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^engine/narratives\\.json$",
+      "description": "Path to narratives config."
+    }
+  }
+}

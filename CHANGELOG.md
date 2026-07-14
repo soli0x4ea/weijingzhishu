@@ -1,5 +1,76 @@
 # 未竟之书初章·遇见 — CHANGELOG
 
+## v2.0.3 (2026-07-14) — 发布前收尾
+
+### 修复
+
+- **P2-1 __pycache__ 清理**: 删除 6 个编译缓存目录，发布包整洁
+- **P2-2 duo 路线 game_route 时序**: 在具身转移分支中即时设置 `_game_route = "duo"`，确保 LLM 在转移叙事后的第一次回复中就能正确识别双人路线。修复前需等下一轮玩家输入才设置。
+
+## v2.0.2 (2026-07-14) — Bug 修复
+
+### 修复
+
+- **P0-1 激活前命令匹配错误**: `cmd_follow` 的触发词（"往前走"/"走"/"往前走"等）与 `cmd_move` 重叠，导致激活前说"往前走"被误匹配为激活后命令，玩家卡在培养舱。修复: 移除重叠触发词，`cmd_follow` 改为"跟着你的声音走"/"带路"/"导航"/"你带路"等无歧义触发词。
+- **P0-2 激活后场景不推进**: `_handle_follow` 只返回固定叙事文本，未调用 `_scene_manager.move_to()` 切换场景。修复: 增加场景推进映射（控制室→走廊B、走廊A→控制室），首次进入走廊B自动触发激光阵叙事；其他场景返回对应导航叙事。
+- **P1-1 版本号统一**: VERSION / SKILL.md / README.md / card.json → 2.0.2；SKILL.md protocol → 2.6.0
+- **P1-3 记忆碎片清理**: 移除了聊天表情符号（[偷笑]/[坏笑]/😊/😳等）和格式残余
+- **P1-4 README 架构更新**: 更新架构图反映 DLC 框架 + 胶水代码的分层结构
+- **P2-1 __pycache__ 清理**: 删除所有编译缓存
+
+## v2.0.1 (2026-07-14) — Python 兼容性修复
+
+### 修复
+
+- **P0-1 Python 3.9 兼容性**: dlc/ 下 28 个 .py 文件添加 `from __future__ import annotations`，解决 `X | None` 语法兼容性
+- **P1-1 protocol_version**: `card.json` 从 `1.0.0` 改为 `2.6.0`
+- **P1-3 vault**: 从 `enabled: true` 改为 `false`（无配置数据）
+
+## v2.0.0 (2026-07-13) — DLC 框架迁移
+
+### DLC 框架接入（7/7 模块全开）
+
+**阶段 0 — 基础设施**
+- 引入 dlc/ 框架（从 dlc-skill 复制，protocol v1.0.0）
+- 建立标准目录结构：dlc/ + cards/weijingzhishu/ + content/
+- card.json 升级：protocol_version 1.0.0，7/7 模块全部启用
+
+**阶段 1 — Engine 模块迁移**
+- engine.py 从 1653 行重构为 ~780 行（-53%）
+- DLC 框架接管：实体状态（EntityEngine/EntityState）、修改器（apply_modifier）、阈值检测（check_thresholds）、叙事渲染（render_event）
+- 保留胶水代码：SceneManager、激光阵导航、出口抉择、保安室、激活过场、道具、伤害、记忆碎片
+- 三实体全 DLC EntityState：soli（4通道+17标记）、player（hp+inventory）、environment（3通道+item_pool）
+- 叙事格式兼容：v1.0.6 的 pipeline 格式注入 command_assembly，通过 render_command_narrative 渲染
+
+**阶段 2 — Interaction 模块标准化**
+- 命令匹配：dlc.interaction.match_command（最长触发词优先）
+- 效果执行：dlc.interaction.execute_command（modifier/narrative/state 统一管道）
+- 游戏特定叙事（intimacy 分档、场景分叉）保留 Python handler
+
+**阶段 3 — Identity + Memory**
+- identity/profile.json：Soli 身份背景（S0-L1 / 45年 / 九号生物工程研究所）
+- identity/personality.json：5 特质 + companion archetype + 说话风格
+- Memory 模块自动加载：ChatlogStore + TimelineStore + MemorySearch
+
+**阶段 4 — Behavior + Body + Vault**
+- body/anatomy.json：5 区域数字躯干（服务器机柜模型）
+- body/zones.json：6 交互区
+- dlc/body.py（235行）：AnatomyLoader + ZonesLoader + BodyModel
+- behavior/lws_rules.json：6 核心原则 + 11 条 LWS 规则
+  - 根据 intimacy/stability/understanding/soli_hp 动态切换 Soli 语气
+  - 预激活→系统口吻 / 激活后→「我」自称 / 高亲密→温暖 / 临界稳定→碎片化 / 记忆碎片→泄露「少爷」
+- dlc/vault.py（162行）：AES-256-GCM 加密存储，3 次错误锁定 5 分钟
+
+**阶段 5 — 回归测试 + 文档**
+- 全量回归 57 项测试（模块加载/启动/命令/谜题/导航/激活/道具/存档/边界/7模块交叉）
+- SKILL.md 重写：新增架构章节、LWS 行为规则表、7 模块说明
+- CHANGELOG 补全 v2.0.0
+
+### 模块状态：7/7（全开）
+identity | body | engine | interaction | memory | behavior | vault
+
+---
+
 ## v1.0.6 (2026-07-13)
 
 ### 修复

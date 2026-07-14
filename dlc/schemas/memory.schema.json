@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/memory.schema.json",
+  "title": "Memory Module (v2.6.0)",
+  "description": "Dual-core linear memory. Enabled=true activates ChatlogStore + TimelineStore via convention path MEMORY/.",
+  "type": "object",
+  "required": ["enabled"],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Enable dual-core memory (ChatlogStore + TimelineStore). Default: false."
+    }
+  },
+  "additionalProperties": false
+}

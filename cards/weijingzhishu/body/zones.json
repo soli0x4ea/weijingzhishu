@@ -1,0 +1,53 @@
+{
+  "description": "Soli数字躯干的交互区域。玩家通过触摸机柜表面来感知和互动。",
+  "zones": [
+    {
+      "id": "rack_surface",
+      "name": "机柜金属表面",
+      "parent_region": "core_rack",
+      "sensitivity_multiplier": 1.0,
+      "zone_type": "special",
+      "trigger_modifiers": ["mod_intimacy_warmth"]
+    },
+    {
+      "id": "ventilation_grill",
+      "name": "通风栅格",
+      "parent_region": "core_rack",
+      "sensitivity_multiplier": 1.2,
+      "zone_type": "ticklish",
+      "trigger_modifiers": []
+    },
+    {
+      "id": "speaker_grill",
+      "name": "扬声器格栅",
+      "parent_region": "voice_module",
+      "sensitivity_multiplier": 1.5,
+      "zone_type": "erogenous",
+      "trigger_modifiers": ["mod_intimacy_voice_touch"]
+    },
+    {
+      "id": "camera_lens",
+      "name": "摄像头镜头",
+      "parent_region": "sensor_array",
+      "sensitivity_multiplier": 0.8,
+      "zone_type": "special",
+      "trigger_modifiers": []
+    },
+    {
+      "id": "memory_slot",
+      "name": "记忆插槽",
+      "parent_region": "memory_bank",
+      "sensitivity_multiplier": 1.0,
+      "zone_type": "special",
+      "trigger_modifiers": ["mod_understanding_data_access"]
+    },
+    {
+      "id": "power_button",
+      "name": "电源按钮",
+      "parent_region": "console_panel",
+      "sensitivity_multiplier": 0.5,
+      "zone_type": "painful",
+      "trigger_modifiers": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/interaction.schema.json",
+  "title": "Interaction Module",
+  "description": "Command and item systems. Required for L3 (depends on engine).",
+  "type": "object",
+  "required": ["enabled"],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Enable interaction module (L3)."
+    },
+    "commands": {
+      "oneOf": [
+        {"type": "string", "pattern": "^interaction/commands\\.json$"},
+        {"type": "null"}
+      ],
+      "description": "Path to commands config file. Must be interaction/commands.json."
+    },
+    "items": {
+      "oneOf": [
+        {"type": "string", "pattern": "^interaction/items\\.json$"},
+        {"type": "null"}
+      ],
+      "description": "Path to items config file. Must be interaction/items.json."
+    }
+  }
+}

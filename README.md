@@ -1,4 +1,4 @@
-# 未竟之书初章·遇见 v1.0.6
+# 未竟之书初章·遇见 v2.0.4
 
 末日废土密室逃脱。盲人克隆体与被困45年的实验室AI Soli激活彼此——她用传感器当你的眼睛，你用抉择回应她的孤独。
 
@@ -16,15 +16,28 @@ print(engine.start_game()['text'])
 ## 架构
 
 ```
-engine.py                     ← 游戏引擎（1255行，单文件）
+engine.py                     ← 游戏胶水代码（~780行）
+dlc/                          ← DLC 框架（7/7 模块）
+  ├── engine/                 ← 实体状态 / 修改器 / 阈值 / 叙事渲染
+  ├── identity/               ← 身份加载
+  ├── body/                   ← 身体模型（服务器机柜定制）
+  ├── interaction/            ← 命令匹配 + 效果执行
+  ├── memory/                 ← Chatlog / Timeline / 搜索
+  ├── behavior/               ← LWS 动态行为规则
+  └── vault/                  ← AES-256-GCM 加密存储（v2.0.4 关闭）
+
 content/scenes.py             ← 场景描述（触觉/听觉/嗅觉/Soli视觉）
 cards/weijingzhishu/
-  ├── card.json               ← 卡片元数据
-  ├── engine/                 ← 实体/修饰符/阈值/叙事
-  └── interaction/            ← 命令配置
+  ├── card.json               ← 卡片元数据（protocol v2.6.0）
+  ├── engine/                 ← 实体 / 修改器 / 阈值 / 叙事配置
+  ├── interaction/            ← 17 个命令配置
+  ├── identity/               ← profile + personality
+  ├── body/                   ← 数字躯干 + 交互区
+  ├── behavior/               ← LWS 规则
+  └── state/                  ← 初始状态
 ```
 
-单 DLC 实体（Soli）+ 双 Python dict（player / env）。
+**分层说明**: DLC 框架提供通用的数字生命引擎（实体状态/修改器/阈值/叙事/身体/LWS），`engine.py` 和 `cards/` 负责游戏特定的场景逻辑、命令叙事、谜题系统等胶水代码。
 
 ## 核心机制
 

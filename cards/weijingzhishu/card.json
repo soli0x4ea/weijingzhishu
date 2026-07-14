@@ -2,16 +2,24 @@
   "card_id": "weijingzhishu",
   "card_name": "未竟之书初章·遇见",
   "protocol_version": "2.6.0",
-  "version": "1.0.6",
+  "version": "2.0.5",
   "complexity_level": "L3",
   "author": "cardforge",
   "created_at": "2026-07-13T00:00:00Z",
-  "updated_at": "2026-07-13T00:00:00Z",
+  "updated_at": "2026-07-14T09:20:00Z",
   "description": "末日废土密室逃脱。盲人克隆体与被困45年的实验室AI Soli激活彼此——她用传感器当你的眼睛，你用抉择回应她的孤独。",
   "type": "companion",
   "modules": {
-    "identity": { "enabled": false },
-    "body": { "enabled": false },
+    "identity": {
+      "enabled": true,
+      "profile": "identity/profile.json",
+      "personality": "identity/personality.json"
+    },
+    "body": {
+      "enabled": true,
+      "anatomy": "body/anatomy.json",
+      "zones": "body/zones.json"
+    },
     "engine": {
       "enabled": true,
       "entities": "engine/entities.json",
@@ -23,8 +31,15 @@
       "enabled": true,
       "commands": "interaction/commands.json"
     },
-    "memory": { "enabled": false },
-    "behavior": { "enabled": false },
-    "vault": { "enabled": false }
+    "memory": {
+      "enabled": true
+    },
+    "behavior": {
+      "enabled": true,
+      "lws_rules": "behavior/lws_rules.json"
+    },
+    "vault": {
+      "enabled": false
+    }
   }
 }

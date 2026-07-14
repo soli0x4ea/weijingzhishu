@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/vault.schema.json",
+  "title": "Vault Module",
+  "description": "Encrypted storage module. L3 optional.",
+  "type": "object",
+  "required": [
+    "enabled"
+  ],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Enable vault module (L3, optional)."
+    },
+    "secrets": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^vault/secrets\\.json$",
+      "description": "Path to vault secrets config."
+    }
+  }
+}

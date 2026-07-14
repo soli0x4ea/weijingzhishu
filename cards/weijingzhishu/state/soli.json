@@ -1,0 +1,24 @@
+{
+  "entity_id": "soli",
+  "channels": {
+    "soli_hp": 80.0,
+    "understanding": 5.0,
+    "intimacy": 35.0,
+    "stability": 90.0
+  },
+  "flags": {
+    "activated": 1,
+    "found_power_panel": 1,
+    "puzzle_drainage_done": 1,
+    "puzzle_panel_done": 1,
+    "puzzle_power_done": 1,
+    "puzzle_laser_done": 0,
+    "gate_choice_made": 0,
+    "memory_burned": 0,
+    "robot_body_found": 0,
+    "soli_embodied": 0
+  },
+  "meta": {
+    "soli_inventory": []
+  }
+}

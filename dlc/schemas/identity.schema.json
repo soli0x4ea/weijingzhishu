@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/identity.schema.json",
+  "title": "Identity Module",
+  "description": "Identity module configuration. Contains profile, personality, and speech sub-modules.",
+  "type": "object",
+  "required": [
+    "enabled"
+  ],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Must be true for L0+ cards."
+    },
+    "profile": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^identity/profile\\.json$",
+      "description": "Path to identity profile config."
+    },
+    "personality": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^identity/personality\\.json$",
+      "description": "Path to personality config."
+    },
+    "speech": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Path to speech style config (L1+, optional)."
+    }
+  }
+}

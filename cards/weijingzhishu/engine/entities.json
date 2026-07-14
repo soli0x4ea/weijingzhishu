@@ -6,35 +6,77 @@
           "initial": 80.0,
           "min": 0.0,
           "max": 100.0,
-          "description": "内存/电力/处理能力。高=满功率，低=模块离线/记忆碎片化。烧内存出口抉择永久降低。"
+          "description": "内存/电力/处理能力。"
         },
         "understanding": {
           "initial": 5.0,
           "min": 0.0,
           "max": 100.0,
-          "description": "双向理解——她知道他喜欢什么方式被指引，他知道她什么时候在隐瞒。"
+          "description": "双向理解。"
         },
         "intimacy": {
           "initial": 15.0,
           "min": 0.0,
           "max": 100.0,
-          "description": "不自觉的靠近——语言中的温度、沉默中的默契。有自然回撤，不是好感度系统。"
+          "description": "不自觉的靠近。"
         },
         "stability": {
           "initial": 75.0,
           "min": 0.0,
           "max": 100.0,
-          "description": "系统情绪/逻辑稳定程度。受环境冲击波动。高=完全稳定，中=偶尔卡顿，低=语音破碎/逻辑断裂。"
+          "description": "系统情绪/逻辑稳定程度。"
         }
       },
       "flags": {
         "activated": false,
+        "found_power_panel": false,
         "puzzle_drainage_done": false,
         "puzzle_panel_done": false,
         "puzzle_power_done": false,
         "puzzle_laser_done": false,
         "gate_choice_made": false,
-        "memory_burned": false
+        "memory_burned": false,
+        "robot_body_found": false,
+        "soli_embodied": false
+      }
+    },
+    "player": {
+      "channels": {
+        "hp": {
+          "initial": 100.0,
+          "min": 0.0,
+          "max": 100.0,
+          "description": "玩家生命值。"
+        }
+      },
+      "flags": {
+        "lab_coat_protection": false
+      }
+    },
+    "environment": {
+      "channels": {
+        "scene_index": {
+          "initial": 0.0,
+          "min": 0.0,
+          "max": 6.0,
+          "description": "场景编号（0=pod, 1=走廊A, 2=控制室, 3=走廊B, 4=出口, 5=保安室, 6=废土）。"
+        },
+        "threat_level": {
+          "initial": 0.0,
+          "min": 0.0,
+          "max": 100.0,
+          "description": "环境敌意程度。"
+        },
+        "sensor_coverage": {
+          "initial": 72.0,
+          "min": 0.0,
+          "max": 100.0,
+          "description": "Soli 传感器覆盖率。"
+        }
+      },
+      "flags": {
+        "corridor_felt": false,
+        "sharp_wall_cut": false
       }
     }
   }

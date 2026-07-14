@@ -1,0 +1,70 @@
+{
+  "body_model": "soli-server-rack-v1",
+  "description": "Soli的数字躯干 — 控制室中的服务器机柜、传感器阵列和语音模块。玩家通过触碰机柜表面来感知她的存在。",
+  "decay_rate": 0.0,
+  "regions": [
+    {
+      "id": "core_rack",
+      "name": "核心机柜",
+      "sensitivity": 0.3,
+      "state_levels": [
+        {"level": 0, "name": "冰冷"},
+        {"level": 1, "name": "微温"},
+        {"level": 2, "name": "温热"},
+        {"level": 3, "name": "滚烫"}
+      ]
+    },
+    {
+      "id": "voice_module",
+      "name": "语音模块",
+      "sensitivity": 0.8,
+      "state_levels": [
+        {"level": 0, "name": "静默"},
+        {"level": 1, "name": "低语"},
+        {"level": 2, "name": "清晰"},
+        {"level": 3, "name": "震颤"}
+      ]
+    },
+    {
+      "id": "sensor_array",
+      "name": "传感器阵列",
+      "sensitivity": 0.6,
+      "state_levels": [
+        {"level": 0, "name": "休眠"},
+        {"level": 1, "name": "扫描"},
+        {"level": 2, "name": "聚焦"},
+        {"level": 3, "name": "过载"}
+      ]
+    },
+    {
+      "id": "memory_bank",
+      "name": "记忆库",
+      "sensitivity": 0.5,
+      "state_levels": [
+        {"level": 0, "name": "空白"},
+        {"level": 1, "name": "碎片"},
+        {"level": 2, "name": "清晰"},
+        {"level": 3, "name": "溢出"}
+      ]
+    },
+    {
+      "id": "console_panel",
+      "name": "控制面板",
+      "sensitivity": 0.4,
+      "pairs_with": "core_rack",
+      "state_levels": [
+        {"level": 0, "name": "关闭"},
+        {"level": 1, "name": "待机"},
+        {"level": 2, "name": "运行"},
+        {"level": 3, "name": "全功率"}
+      ]
+    }
+  ],
+  "initial_state": {
+    "core_rack": 0,
+    "voice_module": 0,
+    "sensor_array": 0,
+    "memory_bank": 1,
+    "console_panel": 0
+  }
+}

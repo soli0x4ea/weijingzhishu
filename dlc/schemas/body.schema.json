@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/body.schema.json",
+  "title": "Body Module",
+  "description": "Body model module. Required for L1+ (engine depends on it).",
+  "type": "object",
+  "required": [
+    "enabled"
+  ],
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "description": "Enable body module (L1+)."
+    },
+    "anatomy": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^body/anatomy\\.json$",
+      "description": "Path to body anatomy config."
+    },
+    "zones": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^body/zones\\.json$",
+      "description": "Path to body zones config."
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dlc://schemas/card.schema.json",
+  "title": "Digital Life Card — Root Schema",
+  "description": "Top-level card.json schema for DLC Protocol v1.0.",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "card_id",
+    "card_name",
+    "complexity_level",
+    "author",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "protocol_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(-[a-zA-Z0-9.]+)?$",
+      "description": "DLC Protocol version (SemVer)."
+    },
+    "card_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9_-]*$",
+      "description": "Unique card identifier (lowercase, alphanumeric + _-)."
+    },
+    "card_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "Human-readable card name."
+    },
+    "complexity_level": {
+      "type": "string",
+      "enum": ["L0", "L1", "L2", "L3"],
+      "description": "Declared complexity level."
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Card author."
+    },
+    "created_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}",
+      "description": "ISO 8601 creation date."
+    },
+    "updated_at": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}",
+      "description": "ISO 8601 last update date."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 1024,
+      "description": "Optional description."
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional tags."
+    },
+    "modules": {
+      "type": "object",
+      "description": "Module configuration index.",
+      "properties": {
+        "identity":    { "$ref": "identity.schema.json" },
+        "body":        { "$ref": "body.schema.json" },
+        "engine":      { "$ref": "engine.schema.json" },
+        "memory":      { "$ref": "memory.schema.json" },
+        "behavior":    { "$ref": "behavior.schema.json" },
+        "interaction": { "$ref": "interaction.schema.json" },
+        "vault":       { "$ref": "vault.schema.json" }
+      }
+    },
+    "engine_requirements": {
+      "type": "object",
+      "description": "Engine compatibility requirements."
+    }
+  }
+}
